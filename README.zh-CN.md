@@ -27,10 +27,17 @@
 
 ---
 
-## 🚀 安装方式
+## 🚀 安装
 
 ```bash
 pip install pyvoxelis
+```
+
+---
+
+## 🚀 开发
+```bash
+cargo add pyvoxelis
 ```
 
 ---
