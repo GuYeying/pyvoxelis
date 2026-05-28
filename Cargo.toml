@@ -1,0 +1,41 @@
+
+
+[package]
+# 这里的 `name` 是包的名称。
+name = "pyvoxelis"
+#  这些是良好的默认设置：
+version = "0.1.0-alpha"
+edition = "2024"
+
+
+
+#这是让 Rust 编译成 Python 能导入的模块
+[lib]
+# 原生库的名称。这是 Python 中导入库时使用的名称（例如 `import string_sum`）。
+# 如果你更改了这个名称，也必须更改 `src/lib.rs` 中 `#[pymodule]` 的名称。
+name = "pyvoxelis"
+# "cdylib" 是生成 Python 可导入的共享库所必需的。
+crate-type = ["cdylib"]
+
+license = "MIT OR Apache-2.0"
+
+
+[profile.release]
+opt-level = "z"        # 体积最小化
+lto = "fat"            # 全局死代码删除
+strip = "symbols"      # 自动剥离符号（最重要！）
+panic = "abort"        # 删掉错误展开逻辑
+codegen-units = 1      # 最大化压缩
+debug = false          # 关闭所有调试信息
+
+[features]
+memory_stats = []  # 空功能，只为消除 cfg 警告
+
+[dependencies]
+pyo3 = "0.28.3"
+voxelis = "25.4.0"
+glam = "0.29.3"
+parking_lot = "0.12.5"
+byteorder = "1.5.0"
+rustc-hash = "2.1.2"
+

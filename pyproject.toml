@@ -1,0 +1,24 @@
+
+
+#告诉 maturin 怎么打包
+[build-system]
+requires = ["maturin>=1.13,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "pyvoxelis"
+version = "0.1.0-alpha"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+
+[tool.maturin]
+exclude = [
+    "**/__pycache__",
+    "**/*.pyc",
+    "**/*.pyo"
+]
