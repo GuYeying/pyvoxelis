@@ -7,6 +7,9 @@ name = "pyvoxelis"
 version = "0.1.0-alpha"
 edition = "2024"
 
+description = "Python bindings for voxelis, a high-performance sparse voxel octree library"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/GuYeying/pyvoxelis"
 
 
 #这是让 Rust 编译成 Python 能导入的模块
