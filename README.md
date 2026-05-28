@@ -24,6 +24,13 @@ pip install pyvoxelis
 
 ---
 
+## 🚀 Develop
+```bash
+cargo add pyvoxelis
+```
+
+---
+
 ## 📌 Quick Example
 
 ```python
